@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import "tailwindcss";
+
+body{
+  position:relative;
+  height:100vh;
+  width:100vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #19A1AE;
+  font-family:"Kumbh Sans"
+}

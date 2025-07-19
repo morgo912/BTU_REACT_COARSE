@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+body{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background-color: #E0E8FF;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Red Hat Display';
+}
+
+.backgroundImg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 1;
+}
+
+.changeP:hover{
+  text-decoration: none;
+  cursor:pointer;
+}

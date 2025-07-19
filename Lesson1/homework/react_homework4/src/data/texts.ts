@@ -1,0 +1,9 @@
+export const title = "Victor Crest"
+export const titleSpan = "26"
+export const description = "London"
+export const followerNumber = "80K"
+export const likesNumber = '803K'
+export const photosNumber = "1.4K"
+export const followersText = "Followers"
+export const LikesText = "Likes"
+export const PhotosText = "Photos"

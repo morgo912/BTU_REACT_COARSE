@@ -1,0 +1,47 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  width:100vw;
+  min-height:100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+  background-color: #fff;
+  color:#000;
+  transition:0.5s;
+}
+
+.counter{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:1px solid black;
+  padding: 2rem;
+  gap:1rem;
+}
+
+.tgBtn{
+  padding:1rem;
+  width:7rem;
+  border-radius:0.725rem;
+  background-color: rgba(173, 169, 164, 0.808);
+  transition:0.5s;
+}
+
+.tgBtn:hover{
+  cursor:pointer;
+  background-color: rgb(80, 80, 81);
+}
+
+.dark-mode{
+  background-color: #000;
+  color:#fff;
+  transition:0.5s;
+}

@@ -1,0 +1,6 @@
+export const title = "Equilibrium #3429"
+export const description = "Our Equilibrium collection promotes balance and calm."
+export const powerText = "0.041 ETH"
+export const time = "3 days left"
+export const profileText = "Creation of"
+export const author = "Jules Wyvern"
