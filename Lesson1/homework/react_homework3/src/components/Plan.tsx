@@ -14,7 +14,7 @@ function Plan() {
       </div>
 
       {/* right content */}
-      <p className='text-[14px] font-[700] underline text-[#382AE1] hover:text-[#766CF1]  cursor:pointer changeP'>Change</p>
+      <p className='text-[14px] font-[700] underline text-[#382AE1] hover:text-[#766CF1] hover:no-underline cursor-pointer'>Change</p>
     </div>
   )
 }
