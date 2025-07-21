@@ -17,9 +17,4 @@ body{
   font-family: "Outfit";
 }
 
-.imgDiv:hover .hoveredBack {
-  display:block;
-}
-.imgDiv:hover .eyeImg{
-  display:block;
-}
+
