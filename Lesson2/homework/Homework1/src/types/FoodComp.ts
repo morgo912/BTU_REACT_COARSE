@@ -8,10 +8,11 @@ export interface foodCardProps{
   oldPrice:number,
   img:string,
   iconImgSrc:string,
-  iconBackground:string
+  iconBackground:string,
+  icons:iconProps[]
 }
 
-export interface iIconProps{
+export interface iconProps{
   img:string,
   background:string
 }

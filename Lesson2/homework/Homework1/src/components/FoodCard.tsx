@@ -5,7 +5,7 @@ import LogoIcon from  "../images/i-icon.png"
 import Icon from './Icon'
 import "../App.css"
 
-function FoodCard({img,title,description,calorieAmount,calorieDetails,deg,newPrice,oldPrice,iconImgSrc,iconBackground}: foodCardProps) {
+function FoodCard({img,title,description,calorieAmount,calorieDetails,deg,newPrice,oldPrice, icons}: foodCardProps) {
   return (
     <div className=' flex flex-col justify-center items-center bg-[#FFFFFF] rounded-[16px] w-[360px] h-[528px]'>
       {/* img div */}
@@ -19,8 +19,11 @@ function FoodCard({img,title,description,calorieAmount,calorieDetails,deg,newPri
       <div className='flex  items-center justify-center gap-[57px]  mt-[32px] ml-[24px] mr-[24px]'>
         <p className='w-[198px] text-[24px] '>{title}</p>
         <div className='flex justify-center items-center gap-[10px]'>
-          <Icon img={iconImgSrc} background={iconBackground}/>
-          <Icon img={iconImgSrc} background={iconBackground}/>
+          {
+            icons.map((icon) => {
+              return <Icon img={icon.img} background={icon.background} />
+            })
+          }
         </div>
       </div>
     
