@@ -1,0 +1,5 @@
+export const question1 = "How many team members can I invite?"
+export const question2 = "What is the maximum file upload size?"
+export const question3 = "How do I reset my password?"
+export const question4 = "Can I cancel my subscription?"
+export const question5 = "Do you provide additional support?"
