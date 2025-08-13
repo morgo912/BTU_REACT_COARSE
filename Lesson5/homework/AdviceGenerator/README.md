@@ -2,7 +2,7 @@
 
 Get random pieces of advice instantly! This is a simple and interactive React application that fetches advice from an API on load and displays it beautifully on the UI.  
 
-**Live Demo:** [Advice Generator](https://addvicegenerator.netlify.app)
+**Live Demo:** [Advice Generator](adivceegenerator.netlify.app)
 
 ![Advice Generator Screenshot](src/images/screen.png)
 
