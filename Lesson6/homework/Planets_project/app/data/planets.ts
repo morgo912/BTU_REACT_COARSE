@@ -1,0 +1,52 @@
+import { PlanetsTypes } from "../types/planetsType"
+
+export const PlanetsArray: PlanetsTypes[] = [
+  {
+    id:1,
+    circleImg:"mercuryCricle.svg",
+    planetName:"MERCURY",
+    routeLink:"/mercury"
+  },
+  {
+    id:2,
+    circleImg:"venusCircle.svg",
+    planetName:"VENUS",
+    routeLink:"/mercury"
+  },
+  {
+    id:3,
+    circleImg:"earthCircle.svg",
+    planetName:"EARTH",
+    routeLink:"/mercury"
+  },
+  {
+    id:4,
+    circleImg:"marsCircle.svg",
+    planetName:"MARS",
+    routeLink:"/mercury"
+  },
+  {
+    id:5,
+    circleImg:"jupiterCircle.svg",
+    planetName:"JUPITER",
+    routeLink:"/mercury"
+  },
+  {
+    id:6,
+    circleImg:"saturnCircle.svg",
+    planetName:"SATURN",
+    routeLink:"/mercury"
+  },
+  {
+    id:7,
+    circleImg:"uranusCircle.svg",
+    planetName:"URANUS",
+    routeLink:"/mercury"
+  },
+  {
+    id:8,
+    circleImg:"neptuneCircle.svg",
+    planetName:"NEPTUNE",
+    routeLink:"/mercury"
+  }
+]
