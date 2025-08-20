@@ -2,17 +2,16 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import BurgerMenu from '../components/BurgerMenu'
-import MercuryOverview from '../components/MercuryOverview'
-import MercuryStructure from '../components/MercuryStructure'
-import MercurySurface from '../components/MercurySurface'
-
-function Mercury() {
+import EarthOverview from '../components/EarthOverview'
+import EarthStructure from '../components/EarthStructure'
+import EarthSurface from '../components/EarthSurface'
+function Earth() {
   const[isBgClicked,setIsBgClicked] = useState(false)
-  const[activeComponent, setActiveComponent] = useState('overview')
+    const[activeComponent,setActiveComponent] = useState("overview")
   return (
-    <div  className="w-full min-h-screen flex flex-col  bg-[#070724]">
+    <div className="w-full min-h-screen flex flex-col  bg-[#070724]">
       <Header isBgClicked={isBgClicked} setIsBgClicked={setIsBgClicked} />
-      <hr className="bg-[#FFFFFF] h-[1px] border-0 mt-[16px] md:mt-[27px]" />
+      <hr className="bg-[#FFFFFF] h-[1px] border-0 mt-[16px]" />
       {isBgClicked && <BurgerMenu />}
       {/* btn divs */}
       <div className="flex justify-between items-center px-[24px] py-[20px] md:hidden">
@@ -30,12 +29,12 @@ function Mercury() {
           <p onClick={() => setActiveComponent("surface")}>SURFACE</p>
         </div>
       </div>
-      
-      {activeComponent === "overview" && <MercuryOverview setActiveComponent={setActiveComponent} />}
-      {activeComponent === "structure" && <MercuryStructure setActiveComponent={setActiveComponent} />}
-      {activeComponent === "surface" && <MercurySurface setActiveComponent={setActiveComponent} />}
+      <hr />
+      {activeComponent === "overview" && <EarthOverview  setActiveComponent={setActiveComponent}/>}
+      {activeComponent === "structure" && <EarthStructure setActiveComponent={setActiveComponent}/>}
+      {activeComponent === "surface" && <EarthSurface setActiveComponent={setActiveComponent}/>}
     </div>
   )
 }
 
-export default Mercury
+export default Earth

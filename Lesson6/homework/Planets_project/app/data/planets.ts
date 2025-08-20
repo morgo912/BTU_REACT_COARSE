@@ -11,13 +11,13 @@ export const PlanetsArray: PlanetsTypes[] = [
     id:2,
     circleImg:"venusCircle.svg",
     planetName:"VENUS",
-    routeLink:"/mercury"
+    routeLink:"/venus"
   },
   {
     id:3,
     circleImg:"earthCircle.svg",
     planetName:"EARTH",
-    routeLink:"/mercury"
+    routeLink:"/earth"
   },
   {
     id:4,

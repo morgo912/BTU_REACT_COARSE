@@ -10,3 +10,13 @@ export interface headerProps{
   isBgClicked: boolean;
   setIsBgClicked: (value: boolean) => void;
 }
+
+export interface additionalInfoTypes {
+    id:number,
+    infoName: string,
+    infoValue:string
+}
+
+export interface overviewProps{
+  setActiveComponent:(value: "overview" | "structure" | "surface") => void
+}

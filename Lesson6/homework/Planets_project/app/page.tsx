@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import BurgerMenu from "./components/BurgerMenu";
+import MercuryOverview from "./components/MercuryOverview";
 
 export default function Home() {
   const[isBgClicked,setIsBgClicked] = useState(false)
@@ -9,8 +10,7 @@ export default function Home() {
     <div className="w-full min-h-screen flex flex-col  bg-[#070724]">
       <Header isBgClicked={isBgClicked} setIsBgClicked={setIsBgClicked} />
       <hr className="bg-[#FFFFFF] h-[1px] border-0 mt-[16px]" />
-      {isBgClicked && <BurgerMenu />}
-      
+      {isBgClicked && <BurgerMenu />}  
     </div>
 
   );
