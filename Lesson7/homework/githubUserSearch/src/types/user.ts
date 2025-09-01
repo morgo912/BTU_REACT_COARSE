@@ -18,7 +18,8 @@ export interface userDataTypes {
 
 export interface searchUserPropsType {
   setUserData:(e:userDataTypes) => void,
-  setError:(e: string) => void
+  setError:(e: string) => void,
+  error:string
 }
 
 export interface userInfoPropsTypes {
@@ -29,5 +30,5 @@ export interface userInfoPropsTypes {
 
 export interface headerPropsTypes {
   darkMode:boolean,
-  setDarkMode: (e:boolean) => void
+  setDarkMode: (e:boolean) => void,
 }

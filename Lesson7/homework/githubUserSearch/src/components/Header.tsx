@@ -1,4 +1,3 @@
-import React from 'react'
 import { MdDarkMode } from "react-icons/md";
 import type { headerPropsTypes } from '../types/user';
 import { PiSunDuotone } from "react-icons/pi";

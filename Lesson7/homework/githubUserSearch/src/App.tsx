@@ -32,11 +32,11 @@ function App() {
     <div className={` w-full min-h-screen flex justify-center items-center
       ${!darkMode ? "bg-[#F6F8FF]" : "bg-[#141D2F]"}
     `}>
-      {/* contents divs */}
-      <div className="max-w-[327px] w-full flex flex-col items-center justify-center md:max-w-[573px]">
-        <Header darkMode={darkMode} setDarkMode = {setDarkMode}  />
-        <SearchUser  setUserData={setUserData}  setError={setError}/>
-        <UserInfo error={error} userData={userData} darkMode={darkMode} />
+      
+      <div className="max-w-[327px] w-full flex flex-col items-center justify-center md:max-w-[573px] lg:max-w-[730px]">
+        <Header  darkMode={darkMode} setDarkMode = {setDarkMode}  />
+        <SearchUser error={error}  setUserData={setUserData}  setError={setError}/>
+        <UserInfo error={error}  userData={userData} darkMode={darkMode} />
       </div>
     </div>
   )
