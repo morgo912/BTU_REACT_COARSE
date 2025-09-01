@@ -1,24 +1,39 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../src/index.css"
 import Header from "./components/Header"
 import SearchUser from "./components/SearchUser"
 import type { userDataTypes } from "./types/user"
 import UserInfo from "./components/UserInfo"
+import { githubUsersApi } from "./api/api"
 function App() {
   const[userData , setUserData] = useState<userDataTypes | null>(null)
   const[error, setError] = useState<string>("")
 
   const[darkMode , setDarkMode] = useState<boolean>(false)
 
-  console.log(userData)
-  console.log(error)
-  console.log(darkMode)
+  
+  useEffect(() => {
+    const hendleDefaultUser = async() => {
+      try {
+        const res = await githubUsersApi.get<userDataTypes>("elenemorgoshia")
+        setUserData(res.data)
+        setError("")
+      }catch(error:unknown) {
+        if(error instanceof Error){
+          console.log(error.message)
+          setError(error.message)
+        }
+      }
+    }
+
+    hendleDefaultUser()
+  },[])
   return(
     <div className={` w-full min-h-screen flex justify-center items-center
       ${!darkMode ? "bg-[#F6F8FF]" : "bg-[#141D2F]"}
     `}>
       {/* contents divs */}
-      <div className="max-w-[327px] w-full flex flex-col items-center justify-center">
+      <div className="max-w-[327px] w-full flex flex-col items-center justify-center md:max-w-[573px]">
         <Header darkMode={darkMode} setDarkMode = {setDarkMode}  />
         <SearchUser  setUserData={setUserData}  setError={setError}/>
         <UserInfo error={error} userData={userData} darkMode={darkMode} />

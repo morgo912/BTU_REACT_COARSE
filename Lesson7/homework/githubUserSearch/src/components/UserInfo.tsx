@@ -19,13 +19,24 @@ function UserInfo({userData,darkMode,error} : userInfoPropsTypes) {
     {label:"Followers" , value: userData.followers, width:"89", id:3}
   ]
 
-  console.log(socialInfo[0].label)
+  const additionalInfo = [
+    {icon: <IoLocation color='#4B6A9B' size={18}/> , content: userData.location , id:1,contentUrl:""},
+    {icon: <FaLink color='#4B6A9B'size={18}/> , content: userData.bio, id:2, contentUrl:""},
+    {icon: <FaTwitter color='#4B6A9B' size={18}/>,content:userData.twitter_username , id:3, contentUrl:""},
+    {icon: <HiMiniBuildingOffice2 color='#4B6A9B' size={18}/>, content:"@github", id:4, contentUrl:userData.url}
+  ]
+  
+
   return (
-    <div className={`w-full  px-[24px] mt-[48px] pt-[32px] pb-[48px] rounded-[15px]  ${!darkMode? "bg-[#FEFEFE]" : "bg-[#1E2A47]"}`}>
+    <div className={`w-full  px-[24px] mt-[48px] pt-[32px] pb-[48px] rounded-[15px]   ${!darkMode? "bg-[#FEFEFE]" : "bg-[#1E2A47]"}`}>
            
+      {/*div that will be opened only on the large screen  */}
+      <div className='hidden lg:block'>
+        <img className='w-[90px] h-[90px] rounded-[50%]' src={userData.avatar_url} alt="avatar of the user" />
+      </div>
       {/* img div */}
       <div className='flex justify-between w-full'>
-        <img className='w-[70px] h-[70px] rounded-[50%]' src={userData.avatar_url} alt="avatar of the user" />
+        <img className='w-[90px] h-[90px] rounded-[50%]' src={userData.avatar_url} alt="avatar of the user" />
         <div className='flex flex-col'>
           {userData.name === null ? <p  className={`text-[16px] text-[#2B3442] ${!darkMode? "text-[#2B3442]" : "text-[#FFFFFF]"} `}>Not Available</p> : <p className={`text-[16px] text-[#2B3442] ${!darkMode? "text-[#2B3442]" : "text-[#FFFFFF]"} `}>{userData.name}</p> }
           {userData.company === null ? <p  className='text-[13px] text-[#0079FF]'>Not Available</p> : <p className='text-[13px] text-[#0079FF]'>{userData.company}</p> }
@@ -35,10 +46,10 @@ function UserInfo({userData,darkMode,error} : userInfoPropsTypes) {
 
       {/* bio div */}
       <div className='mt-[33px]'>
-        <p>{userData.bio}</p>
+        <p className={`{!darkMode ? "text-[#FFFFFF]" : "text-[#4B6A9B]"}`}>{userData.bio}</p>
       </div>
 
-      {/* followers,following, amount of repo  info div - i will use map here as well (later :))*/}
+      {/* followers,following, amount of repo  info div */}
       <div className={`flex rounded-[10px] px-[16px] py-[18px] mt-[24px] ${!darkMode ? "bg-[#F6F8FF]" : "bg-[#141D2F]"} `}> 
         {socialInfo.map((item) => {
           return <div key={item.id} className={`flex flex-col justify-center items-center gap-[24px] w-[${item.width}px]`}>
@@ -48,31 +59,16 @@ function UserInfo({userData,darkMode,error} : userInfoPropsTypes) {
         })}
       </div>
 
-      {/* location, githublink,twitter and github bio - i will use map here later  */} 
+      {/* location, githublink,twitter and github bio */} 
       <div className='flex flex-col gap-[16px] mt-[24px]'>
-        {/* location div */}
-        <div className='flex items-center gap-[13px]'>
-          <IoLocation color='#4B6A9B' size={18} />
-          {userData.location === null ? <p   className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>Not Available</p>:  <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>{userData.location}</p>}
-        </div>
-
-        {/* bio link div */}
-        <div className='flex items-center gap-[13px]'> 
-          <FaLink color='#4B6A9B' /> 
-          {userData.bio === null ? <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>Not Available</p>:  <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>{userData.bio}</p>}
-        </div>
-
-        {/* twitter */}
-        <div className='flex items-center gap-[13px]'>
-          <FaTwitter color='#4B6A9B' size={18} />
-            {userData.twitter_username === null ? <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `} >Not Available</p> :   <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>{userData.twitter_username}</p> }
-        </div>
-
-        {/* github link */}
-        <div className='flex items-center gap-[13px]'>
-          <HiMiniBuildingOffice2 color='#4B6A9B' size={18}  />
-          {userData.url === null ? <p className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `} >Not Available</p> : <a className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `} href={userData.url}>@github</a>}
-        </div>
+        {
+          additionalInfo.map((item) => {
+            return <div key={item.id} className='flex items-center gap-[13px]'>
+              <div>{item.icon}</div>
+              {item.content === null ? <p   className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `}>Not Available</p> : <a className={` text-[13px] ${!darkMode ? "text-[#4B6A9B]" : "text-[#ffff]"} `} href={item.contentUrl}>{item.content}</a>}
+            </div>
+          })
+        }
       </div>
 
     </div>

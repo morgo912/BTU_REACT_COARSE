@@ -31,9 +31,9 @@ function SearchUser({setUserData,setError}: searchUserPropsType) {
 
   return (
     <div className='w-full mt-9 relative'>
-      <CiSearch color='#0079FF' size={20} height={20} className='absolute top-1/2 -translate-y-1/2 left-3 text-[13px]' />
-      <input value={userInput} onChange={(e) => setUserInput(e.target.value)} className='py-[18px] pl-[44px] pr-[98px] rounded-[15px] bg-[#FEFEFE] placeholder:text-[13px] inputText' type="text" placeholder='Search GitHub username…' />
-      <button onClick={hendleUser} className='absolute text-[14px] top-1/2 -translate-y-1/2 right-0 bg-[#0079FF] px-[18px] py-[12px] rounded-[10px] hover:bg-[#60ABFF] cursor-pointer'>
+      <CiSearch color='#0079FF' size={20} height={20} className='absolute top-1/2 -translate-y-1/2 left-8 text-[13px] md:w-[24px] md:h-[24px]' />
+      <input value={userInput} onChange={(e) => setUserInput(e.target.value)} className='w-full py-[18px] pl-[44px] pr-[98px] rounded-[15px] bg-[#FEFEFE] placeholder:text-[13px] inputText md:placeholder:text-[18px] md:py-[22px] md:pl-[79px] md:pr-[239px]' type="text" placeholder='Search GitHub username…' />
+      <button onClick={hendleUser} className='absolute text-[14px] top-1/2 -translate-y-1/2 right-3 bg-[#0079FF] px-[18px] py-[12px] rounded-[10px] hover:bg-[#60ABFF] cursor-pointer md:px-[24px] md:text-[16px] text-[#FFFFFF]'>
         {loading ? "Searchin" : "Search"}
       </button>
     </div>
