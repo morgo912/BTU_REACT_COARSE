@@ -20,7 +20,8 @@ function SearchUser({setUserData,setError}: searchUserPropsType) {
       setLoding(true)
       const res = await githubUsersApi.get(`${userInput}`)
       setUserData(res.data)
-    } catch{
+      setError("")
+    }catch{
       setError("User have not found")
     }finally{
       setLoding(false)

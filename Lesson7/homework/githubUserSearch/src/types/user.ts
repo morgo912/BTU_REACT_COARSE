@@ -17,13 +17,14 @@ export interface userDataTypes {
 }
 
 export interface searchUserPropsType {
-  setUserData:(e:object | null) => void,
+  setUserData:(e:userDataTypes) => void,
   setError:(e: string) => void
 }
 
 export interface userInfoPropsTypes {
-  userData:userDataTypes,
-  darkMode:boolean
+  userData:userDataTypes | null,
+  darkMode:boolean,
+  error:string
 }
 
 export interface headerPropsTypes {

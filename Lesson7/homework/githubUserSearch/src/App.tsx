@@ -21,7 +21,7 @@ function App() {
       <div className="max-w-[327px] w-full flex flex-col items-center justify-center">
         <Header darkMode={darkMode} setDarkMode = {setDarkMode}  />
         <SearchUser  setUserData={setUserData}  setError={setError}/>
-        <UserInfo userData={userData} darkMode={darkMode} />
+        <UserInfo error={error} userData={userData} darkMode={darkMode} />
       </div>
     </div>
   )
