@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Space Grotesk";
+}
+
+.frontDiv{
+  background: 
+    linear-gradient(to bottom, #6348FE, #610595),
+    radial-gradient(circle at top left, #6348FE 0%, transparent 60%),
+    radial-gradient(circle at bottom left, #610595 0%, transparent 60%),
+    radial-gradient(circle at bottom center, #47A2FF 0%, transparent 50%),
+    radial-gradient(circle at top right, #FF834A 30%, transparent 100%);
+  background-blend-mode: normal;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.compleatedDiv{
+  background: linear-gradient(to bottom, #6348FE, #610595);
+}
