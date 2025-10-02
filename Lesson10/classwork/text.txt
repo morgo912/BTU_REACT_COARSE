@@ -1,0 +1,3 @@
+We learned Expo and then made a To-Do list app, 
+which I did by myself at home for homework. 
+It is saved in the homework folder.
